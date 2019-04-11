@@ -1,0 +1,144 @@
+priority -50
+
+snippet with "with" b
+with ${1:expr}:
+	${2:${VISUAL:pass}}
+endsnippet
+
+snippet for "for loop" b
+for ${1:item} in ${2:iterable}:
+	${3:${VISUAL:pass}}
+endsnippet
+
+snippet basefile "set coding utf-8 and import unicode_literals"
+# coding=utf-8
+
+from __future__ import unicode_literals
+$0
+endsnippet
+
+snippet class "class" b
+class ${1:CLASSNAME}(${2:object}):
+	${3:pass}
+endsnippet
+
+snippet def "function" b
+def ${1}(${2}):
+	${3:pass}
+endsnippet
+
+snippet defm "class method" b
+def ${1}(self${2}):
+	${3:pass}
+endsnippet
+
+snippet init "class __init__" b
+def __init__(self${1}):
+	${2:pass}
+endsnippet
+
+snippet from "from module import name" b
+from ${1:module} import ${2:stuff}
+endsnippet
+
+snippet super2 "super call"
+super(${1:CLASSNAME}, self).${2:METHODNAME}(${3})
+endsnippet
+
+snippet super "python 3 super call"
+super().${1}(${2})
+endsnippet
+
+snippet property "property"
+@property
+def ${1}(self):
+	${2:pass}
+endsnippet
+
+snippet classmethod "classmethod"
+@classmethod
+def ${1}(self):
+	${2:pass}
+
+snippet try "Try / Except" b
+try:
+	${1:${VISUAL:pass}}
+except ${2:Exception}:
+	${4:raise $3}
+endsnippet
+
+snippet ae "Assert equal" b
+self.assertEqual(${1:${VISUAL:first}}, ${2:second})
+endsnippet
+
+snippet at "Assert True" b
+self.assertTrue(${1:${VISUAL:expression}})
+endsnippet
+
+snippet af "Assert False" b
+self.assertFalse(${1:${VISUAL:expression}})
+endsnippet
+
+snippet aae "Assert almost equal" b
+self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
+endsnippet
+
+snippet ane "Asset not equal" b
+self.assertNotEqual(${1:${VISUAL:first}}, ${2:second})
+endsnippet
+
+snippet an "Assert is None" b
+self.assertIsNone(${1:${VISUAL:expression}})
+endsnippet
+
+snippet ann "Assert is not None" b
+self.assertIsNotNone(${1:${VISUAL:expression}})
+endsnippet
+
+snippet ais "Assert is" b
+self.assertIn(${1:first}, ${2:second})
+endsnippet
+
+snippet ain "Assert in" b
+self.assertIn(${1:first}, ${2:second})
+endsnippet
+
+snippet aisi "Assert is instance"
+self.assertIsInstance(${1:obj}, ${2:cls})
+endsnippet
+
+snippet testcase "pyunit testcase" b
+class ${1:Class}Test(${2:TestCase}):
+	${3:pass}
+endsnippet
+
+snippet setup "testcase setUp" b
+def setUp(self):
+	${1:pass}
+endsnippet
+
+snippet test "pytest test" b
+def test_${1}(${2}):
+	${3:pass}
+endsnippet
+
+snippet fixture "pytest fixture" b
+@pytest.fixture
+def ${1}(${2}):
+	${3:pass}
+endsnippet
+
+snippet pdb "pdb with set_trace" b
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet bp "breakpoint" b
+breakpoint()
+endsnippet
+
+snippet pprint "pprint with import"
+from pprint import pprint
+pprint(${1})
+endsnippet
+
+# vim:ft=snippets:

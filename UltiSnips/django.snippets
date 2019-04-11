@@ -1,0 +1,137 @@
+priority -50
+
+extends python
+
+# FORMS SNIPPETS
+
+snippet form "Form" b
+class ${1}(forms.Form):
+	${2:pass}
+endsnippet
+
+snippet modelform "ModelForm" b
+class ${1}Form(forms.ModelForm):
+	class Meta:
+		model = $1
+endsnippet
+
+
+# MODELS SNIPPETS
+
+snippet model "Model" b
+class ${1}(models.Model):
+	${0:pass}
+endsnippet
+
+
+# VIEWS SNIPPETS
+
+snippet createview "Generic Create View" b
+class ${1}CreateView(CreateView):
+	${2:pass}
+endsnippet
+
+snippet deleteview "Generic Delete View" b
+class ${1}DeleteView(DeleteView):
+	${2:pass}
+endsnippet
+
+snippet detailview "Generic Detail View" b
+class ${1}DetailView(DetailView):
+	${2:pass}
+endsnippet
+
+snippet listview "Generic List View" b
+class ${1}ListView(ListView):
+	${2:pass}
+endsnippet
+
+snippet templateview "Generic Template View" b
+class ${1}View(TemplateView):
+	${2:pass}
+endsnippet
+
+snippet updateview "Generic Update View" b
+class ${1}UpdateView(UpdateView):
+	${2:pass}
+endsnippet
+
+snippet formview "Generic Form View" b
+class ${1}FormView(FormView):
+	${2:pass}
+endsnippet
+
+snippet dispatch "Dispatch view method" b
+def dispatch(self, request, *args, **kwargs):
+	return super(${1}, self).dispatch(request, *args, **kwargs)
+endsnippet
+
+snippet context "get_context_data view method" b
+def get_context_data(self, **kwargs):
+	context = super(${1}, self).get_context_data(**kwargs)
+	context["${2}"] = ${3}
+	return context
+endsnippet
+
+snippet formkwargs "get_form_kwargs view method" b
+def get_form_kwargs(self):
+	kwargs = super(${1}, self).get_form_kwargs()
+	kwargs["${2}"] = ${3}
+	return kwargs
+endsnippet
+
+snippet initial "get_initial view method" b
+def get_initial(self):
+	initial = super(${1}, self).get_initial()
+	initial["${2}"] = ${3}
+	return initial
+endsnippet
+
+snippet get "get view method" b
+def get(self, request, *args, **kwargs):
+	${1:pass}
+endsnippet
+
+snippet post "post view method" b
+def post(self, request, *args, **kwargs):
+	${1:pass}
+endsnippet
+
+snippet delete "delete view method" b
+def delete(self, request, *args, **kwargs):
+	${1:pass}
+endsnippet
+
+
+# TESTS SNIPPETS
+
+snippet factory "Django factory for model" b
+class ${1:Class}Factory(factory.DjangoModelFactory):
+	class Meta:
+		model = $1
+endsnippet
+
+snippet cget "Client get" b
+response = test_client.get(${1})
+endsnippet
+
+snippet cpost "Client post" b
+response = test_client.post(${2})
+endsnippet
+
+snippet cput "Client post" b
+response = test_client.put(${2})
+endsnippet
+
+snippet cpatch "Client post" b
+response = test_client.patch(${2})
+endsnippet
+
+
+# PERMS SNIPPETS
+
+snippet perm "Permission class" b
+class ${1}:
+	def is_authorized(self):
+		${2:pass}
+endsnippet
