@@ -129,7 +129,7 @@ def ${1}(${2}):
 endsnippet
 
 snippet pdb "pdb with set_trace" b
-import pdb; pdb.set_trace()
+import pdb; pdb.set_trace()  # NOQA
 endsnippet
 
 snippet bp "breakpoint" b
@@ -139,6 +139,12 @@ endsnippet
 snippet pprint "pprint with import"
 from pprint import pprint
 pprint(${1})
+endsnippet
+
+snippet static "staticmethod" b
+@staticmethod
+def ${1}(${2}):
+	${3:pass}
 endsnippet
 
 # vim:ft=snippets:
